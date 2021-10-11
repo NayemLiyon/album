@@ -30,6 +30,8 @@ INSTALLED_APPS = [
      #my app
     'bootstrap',
     'carusel',
+    'dalbum',
+   
     #THIRD PARTY APP
     'cloudinary_storage',
     'cloudinary'

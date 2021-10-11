@@ -73,50 +73,27 @@
   </div>
 </header>
 
-<main>
-
-  <section class="py-5 text-center container">
-    <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Album example</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-        <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-        </p>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+   <div class="container mt-2">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title of Album</label>
+        <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Enter The Title">
       </div>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row d-flex">
- {% for data in album_data%}
-        <div class="col-4 ">
-          <div class="card fixing shadow-sm">
-            <img src="{{data.image.url}}" alt="">
-
-            <div class="card-body">
-              <h2>{{data.title}} </h2>
-              <p> {{data.disc}} </p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button>
-                </div>
-                <small class="text-muted">{{data.time|timesince}}</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {% endfor %}
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label"></label>
+        <textarea name="disc" class="form-control" id="exampleFormControlTextarea1" rows="3">shot description</textarea>
       </div>
-      </div>
-    </div>
-  </div>
 
-</main>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Upload Image</label>
+        <input name="image" class="form-control" type="file" id="formFile">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+   </div>
+</form>
+
+
 
 <footer class="text-muted py-5">
   <div class="container">

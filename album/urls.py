@@ -20,6 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('bootstrap.urls',namespace='bootstrap')),
     path('carusel/',include('carusel.urls',namespace='carusel')),
+    path('dalbum/',include('dalbum.urls',namespace='dalbum')),
+   
 ]
 
 
